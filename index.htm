@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPS tester</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+</head>
+<body class="">
+    <div id="questionMark" class="mode">
+        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" fill="currentColor" class="bi bi-question-circle-fill" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
+          </svg>
+    </div>
+    <div id="about">
+        <p>Esse site mede seu CPS (média de clicks por segundo), dependendo da sua pontuação aparecerá um resultado diferente e fofinho :3</p>
+    </div>
+    <div id="aboutTheme">
+        <p>Clique aqui para mudar de tema</p>
+    </div>
+    <div id="sun" class="mode">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
+            <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+          </svg>
+    </div>
+    <div id="moon" class="mode">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-moon-fill" viewBox="0 0 16 16">
+            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+          </svg>
+    </div>
+    <header id="header">
+        <div id="timer" class="infos ">
+            <p>Tempo</p>
+            <h1 id="outTimer">0.0s</h1>
+        </div>
+        <div id="cpsReal" class="infos ">
+            <p>CPS</p>
+            <h1 id="outReal">0.00</h1>
+        </div>
+        <div id="click" class="infos ">
+            <p>Clicks</p>
+            <h1 id="outClick">0</h1>
+        </div>
+    </header>
+
+    <section id="principal">
+        <div id="clicker" class=""></div>
+        <fieldset id="form">
+            <legend><span>Selecione o tempo</span></legend>
+            <div>
+                <input type="radio" name="time" id="1s" value="1">
+                <label for="1s">1s</label>
+            </div>
+            <div>
+                <input type="radio" name="time" id="3s" value="3">
+                <label for="3s">3s</label>
+            </div>
+            <div>
+                <input type="radio" name="time" id="5s" value="5" checked>
+                <label for="5s">5s</label>
+            </div>
+            <div>
+                <input type="radio" name="time" id="10s" value="10">
+                <label for="10s">10s</label>
+            </div>
+            <div>
+                <input type="radio" name="time" id="30s" value="30">
+                <label for="30s">30s</label>
+            </div>
+            <div>
+                <input type="radio" name="time" id="60s" value="60">
+                <label for="60s">60s</label>
+            </div>
+            <div>
+                <button id="botao" type="submit" class="">Selecionar</button>
+            </div>
+        </fieldset>
+        <img src="https://cdn-icons-png.flaticon.com/512/271/271220.png" id="seta" class="" alt="Img seta">
+    </section>
+
+    <a href="index.htm">
+           <div id="reset" class="">
+            <svg
+            version="1.1"
+            id="Layer_1"
+            x="0px"
+            y="0px"
+            viewBox="0 0 122.04 122.88"
+            style="enable-background:new 0 0 122.04 122.88"
+            xml:space="preserve"
+            sodipodi:docname="reset.svg"
+            inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+            xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:svg="http://www.w3.org/2000/svg"><defs
+              id="defs11" /><sodipodi:namedview
+              id="namedview9"
+              pagecolor="#ffffff"
+              bordercolor="#999999"
+              borderopacity="1"
+              inkscape:pageshadow="0"
+              inkscape:pageopacity="0"
+              inkscape:pagecheckerboard="0"
+              showgrid="false"
+              inkscape:zoom="3.5278321"
+              inkscape:cx="36.141176"
+              inkscape:cy="94.392247"
+              inkscape:window-width="1920"
+              inkscape:window-height="1027"
+              inkscape:window-x="-8"
+              inkscape:window-y="-8"
+              inkscape:window-maximized="1"
+              inkscape:current-layer="g6" /><style
+              type="text/css"
+              id="style2">.st0{fill-rule:evenodd;clip-rule:evenodd;}</style><g
+              id="g6"><path
+                class="st0"
+                d="M 9.1306745,12.55991 V 48.765439 H 45.336204 49.603811 L 46.589756,45.742167 36.026737,35.188366 c 0.700514,-0.672863 1.419463,-1.32729 2.175281,-1.944849 0.995468,-0.811122 2.046239,-1.585375 3.115446,-2.285889 v 0 c 5.54881,-3.613179 12.176044,-5.723939 19.301012,-5.723939 h 0.0092 v -0.0092 c 9.761114,0 18.600498,3.963437 24.9973,10.360238 6.396802,6.396802 10.360238,15.236187 10.360238,24.988084 h -0.0092 v 0.04609 h 0.0092 c 0,9.761114 -3.963436,18.609716 -10.360238,24.9973 -6.396802,6.396802 -15.236186,10.360235 -24.988083,10.360235 v -0.009 h -0.07374 v 0.009 c -3.410399,0 -6.81158,-0.49773 -10.074502,-1.46555 v 0 C 48.691298,93.976265 46.921578,93.284968 45.225596,92.464629 36.570557,88.279977 29.878802,80.666493 26.910834,71.384678 l -0.396344,-1.2259 -21.7435954,0.02765 0.4332128,2.119977 0.00922,0.0553 v 0.0092 c 0.7373838,3.539464 1.843459,7.023601 3.2537049,10.360262 v 0.0092 c 1.3918114,3.272139 3.1154457,6.433671 5.0971637,9.392422 10.166674,15.144011 27.4491,25.117131 47.054283,25.117131 h 0.0092 v -0.009 c 15.63253,0 29.79951,-6.3415 40.030704,-16.58191 v -0.009 c 10.23121,-10.240838 16.57271,-24.380166 16.57271,-40.003479 h 0.009 v -0.04609 h -0.009 c 0,-15.63253 -6.3415,-29.790293 -16.59112,-40.030706 v 0 C 90.427204,10.338542 76.278658,4.0062613 60.655346,3.997044 v -0.00922 h -0.0553 v 0.00922 c -8.028263,0 -15.678617,1.677547 -22.591587,4.70082 -1.115292,0.488516 -2.230585,1.023119 -3.318226,1.576157 -5.051077,2.608494 -9.650506,5.954372 -13.669246,9.899373 L 12.14473,11.315575 9.1306745,8.292303 Z"
+                id="path4"
+                style="fill:#ffffff;stroke:none;stroke-width:0.921729;stroke-opacity:1" /></g></svg>
+            </div>
+    </a>
+
+    <section id="resultados">
+        <h1 id="cpsFinal">CPS: 0.0</h1>
+        <div id="tartaruga" class="results " style="display: none;">
+            <img src="img/tartaruga-removebg.png" alt="Img tartaruga">
+            <h1>Você é uma tartaruga!</h1>
+        </div>
+        <div id="pato" class="results " style="display: none;">
+            <img width="200px" src="img/pato-removebg.png" alt="Img pato">
+            <h1>Você é um pato!</h1>
+        </div>
+        <div id="polvo" class="results " style="display: none;">
+            <img width="255px" src="img/polvo-removebg.png" alt="Img polvo">
+            <h1>Você é um polvo!</h1>
+        </div>
+        <div id="orca" class="results " style="display: none;">
+            <img width="255px" src="img/orca-removebg.png" alt="Img orca">
+            <h1>Você é uma orca!</h1>
+        </div>
+        <div id="golfinho" class="results " style="display: none;">
+            <img width="255px" src="img/golfinho-removebg.png" alt="Img golfinho">
+            <h1>Você é um golfinho!</h1>
+        </div>
+        <div id="aquaman" class="results  " style="display: none;">
+            <img width="255px" src="img/aquaman.png" alt="Img aquaman">
+            <h1>Você é o Aquaman!</h1>
+        </div>
+        <div id="semideus" class="results " style="display: none;">
+            <img width="255px" src="img/semideus-removebg.png" alt="Img semideus">
+            <h1>Você é um Semideus!</h1>
+        </div>
+        <div id="autoclicker" class="results " style="display: none;">
+            <img width="255px" src="img/autoclicker.gif" alt="Img autoclicker">
+            <h1>Você é um autoclicker!</h1>
+        </div>
+
+        <a href="index.htm">
+           <div id="reset" class= "">
+            <svg
+            version="1.1"
+            id="Layer_1"
+            x="0px"
+            y="0px"
+            viewBox="0 0 122.04 122.88"
+            style="enable-background:new 0 0 122.04 122.88"
+            xml:space="preserve"
+            sodipodi:docname="reset.svg"
+            inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+            xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:svg="http://www.w3.org/2000/svg"><defs
+              id="defs11" /><sodipodi:namedview
+              id="namedview9"
+              pagecolor="#ffffff"
+              bordercolor="#999999"
+              borderopacity="1"
+              inkscape:pageshadow="0"
+              inkscape:pageopacity="0"
+              inkscape:pagecheckerboard="0"
+              showgrid="false"
+              inkscape:zoom="3.5278321"
+              inkscape:cx="36.141176"
+              inkscape:cy="94.392247"
+              inkscape:window-width="1920"
+              inkscape:window-height="1027"
+              inkscape:window-x="-8"
+              inkscape:window-y="-8"
+              inkscape:window-maximized="1"
+              inkscape:current-layer="g6" /><style
+              type="text/css"
+              id="style2">.st0{fill-rule:evenodd;clip-rule:evenodd;}</style><g
+              id="g6"><path
+                class="st0"
+                d="M 9.1306745,12.55991 V 48.765439 H 45.336204 49.603811 L 46.589756,45.742167 36.026737,35.188366 c 0.700514,-0.672863 1.419463,-1.32729 2.175281,-1.944849 0.995468,-0.811122 2.046239,-1.585375 3.115446,-2.285889 v 0 c 5.54881,-3.613179 12.176044,-5.723939 19.301012,-5.723939 h 0.0092 v -0.0092 c 9.761114,0 18.600498,3.963437 24.9973,10.360238 6.396802,6.396802 10.360238,15.236187 10.360238,24.988084 h -0.0092 v 0.04609 h 0.0092 c 0,9.761114 -3.963436,18.609716 -10.360238,24.9973 -6.396802,6.396802 -15.236186,10.360235 -24.988083,10.360235 v -0.009 h -0.07374 v 0.009 c -3.410399,0 -6.81158,-0.49773 -10.074502,-1.46555 v 0 C 48.691298,93.976265 46.921578,93.284968 45.225596,92.464629 36.570557,88.279977 29.878802,80.666493 26.910834,71.384678 l -0.396344,-1.2259 -21.7435954,0.02765 0.4332128,2.119977 0.00922,0.0553 v 0.0092 c 0.7373838,3.539464 1.843459,7.023601 3.2537049,10.360262 v 0.0092 c 1.3918114,3.272139 3.1154457,6.433671 5.0971637,9.392422 10.166674,15.144011 27.4491,25.117131 47.054283,25.117131 h 0.0092 v -0.009 c 15.63253,0 29.79951,-6.3415 40.030704,-16.58191 v -0.009 c 10.23121,-10.240838 16.57271,-24.380166 16.57271,-40.003479 h 0.009 v -0.04609 h -0.009 c 0,-15.63253 -6.3415,-29.790293 -16.59112,-40.030706 v 0 C 90.427204,10.338542 76.278658,4.0062613 60.655346,3.997044 v -0.00922 h -0.0553 v 0.00922 c -8.028263,0 -15.678617,1.677547 -22.591587,4.70082 -1.115292,0.488516 -2.230585,1.023119 -3.318226,1.576157 -5.051077,2.608494 -9.650506,5.954372 -13.669246,9.899373 L 12.14473,11.315575 9.1306745,8.292303 Z"
+                id="path4"
+                style="fill:#ffffff;stroke:none;stroke-width:0.921729;stroke-opacity:1" /></g></svg>
+            </div>
+        </a>
+    </section>
+</body>
+<script src="script.js"></script>
+</html>
