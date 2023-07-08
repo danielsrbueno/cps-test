@@ -2,7 +2,7 @@
 
 ![preview](img/printIndex.png)
 
-[🔗 Clique aqui para acessar](https://danielsrbueno.github.io/cps-tester/)
+[🔗 Clique aqui para acessar](https://danielsrbueno.github.io/cps-test/)
 
 ## 🎯 Sobre o desenvolvimento
 
