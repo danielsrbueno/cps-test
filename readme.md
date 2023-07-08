@@ -1,6 +1,6 @@
 # Teste de CPS
 
-![preview](img/printIndex.png)
+![preview](img/printIndex1.png)
 
 [🔗 Clique aqui para acessar](https://danielsrbueno.github.io/cps-test/)
 
